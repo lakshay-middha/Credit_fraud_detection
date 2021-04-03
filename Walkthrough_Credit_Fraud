@@ -1,0 +1,31 @@
+
+Date: 29th March 2021
+
+Steps performed for the anomaly detection task
+-> Scaling (bcoz given 2 features were not scaled)
+-> undersampling - visualizing- removing extreme outliers - predicting - grid search for best hyperparameters - plotting results
+-> Oversampling- visualizing - removing extreme outliers - predicting - grid search if req.- plotting results
+
+
+Two features amount and time were not scaled, so how to decide which scaling fn(log scaler, min-max, robust, standard)  to use
+Use box plot to visualize feature with the target variable and find which scaler is best distributed.
+In this case, used  log scaler
+
+Used undersampled data to first create a balanced dataset
+How to balance dataset- take all the rows with fraud class(492 rows) and randomly sample the same size of non fraud class i.e. 492 rows.
+
+then used various ML algorithms to develop different classifiers 
+	Logistics regression
+	Random forest
+	SVM
+	Decision tree
+Used grid search approach to find the hyperparameters which leads to best cross-validation results.
+Logistics regression performed best with maximum accuracy score and roc score
+ -> recall and f1 scores for fraud transaction class came out to be very low(0.06,0.11) on the testing set.
+
+Used oversampling technique to generate a balanced dataset from the original dataset and repeat the above steps
+Random forest outperforms the other two classifiers with an accuracy of more than 99% and a high f1 score for both the fraud and nonfraud class
+
+ 
+Algorithm behind random forest, decision tree, logistics regression
+->
